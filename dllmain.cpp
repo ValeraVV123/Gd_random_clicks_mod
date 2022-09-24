@@ -3,7 +3,7 @@
 #include <conio.h>
 #include <ctime>
 #include <cstdio>
-#include <string>
+//#include <string> Я забыл убрать это.
 
 //Include libs (all libraries need for my programm)
 
