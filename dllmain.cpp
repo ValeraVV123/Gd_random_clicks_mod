@@ -1,8 +1,9 @@
 #include <windows.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
-#include <iostream>
+#include <ctime>
+#include <cstdio>
+#include <string>
 
 //Include libs (all libraries need for my programm)
 
@@ -14,15 +15,19 @@ void mouse_up();
 
 
 //Thread function
+
 DWORD WINAPI myThread(void* instance) {
     int chance = 120;
     int Input_delay = 600;
     int Click_delay = 20;
     int value = 0;
     bool run = false;
+    
     // Define variables
 
-    MessageBoxA(NULL, "Injected has been success! right alt = on/off mod. Chance: 1/120 in frame.", "Inject info", MB_OK);
+    MessageBoxA(NULL, 
+        "Injected has been success! right alt = on/off mod. Chance: 1/120 in frame.", 
+        "Inject info", MB_OK);
 
     srand(time(0)); // Seed
 
@@ -33,7 +38,10 @@ DWORD WINAPI myThread(void* instance) {
 
                 printf("Mod: off.");
                 Sleep(Input_delay);
-                MessageBoxA(NULL, "Mod: off", "Mod status", MB_OK);
+                MessageBoxA(NULL, 
+                    "Mod: off", 
+                    "Mod status", 
+                    MB_OK);
 
                 continue;
             }
@@ -42,7 +50,10 @@ DWORD WINAPI myThread(void* instance) {
 
                 printf("Mod: on.");
                 Sleep(Input_delay);
-                MessageBoxA(NULL, "Mod: on", "Mod status", MB_OK);
+                MessageBoxA(NULL, 
+                    "Mod: on", 
+                    "Mod status", 
+                    MB_OK);
                 
                 continue;
             } // Mod: on/off
@@ -54,6 +65,7 @@ DWORD WINAPI myThread(void* instance) {
                 mouse_down();
                 Sleep(Click_delay);
                 mouse_up();
+
                 //Random click
 
                 continue;
