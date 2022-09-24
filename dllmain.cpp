@@ -3,9 +3,16 @@
 #include <conio.h>
 #include <ctime>
 #include <cstdio>
-//#include <string> Я забыл убрать это.
 
 //Include libs (all libraries need for my programm)
+
+const int chance = 120;
+const int Input_delay = 600;
+const int Click_delay = 20;
+const int value = 0;
+bool run = false;
+    
+// Define variables
 
 void mouse_down();
 
@@ -17,14 +24,6 @@ void mouse_up();
 //Thread function
 
 DWORD WINAPI myThread(void* instance) {
-    int chance = 120;
-    int Input_delay = 600;
-    int Click_delay = 20;
-    int value = 0;
-    bool run = false;
-    
-    // Define variables
-
     MessageBoxA(NULL, 
         "Injected has been success! right alt = on/off mod. Chance: 1/120 in frame.", 
         "Inject info", MB_OK);
