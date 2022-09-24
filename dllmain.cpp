@@ -10,7 +10,6 @@ const int chance = 120;
 const int Input_delay = 600;
 const int Click_delay = 20;
 const int value = 0;
-bool run = false;
     
 // Define variables
 
@@ -24,6 +23,7 @@ void mouse_up();
 //Thread function
 
 DWORD WINAPI myThread(void* instance) {
+    bool run = false;
     MessageBoxA(NULL, 
         "Injected has been success! right alt = on/off mod. Chance: 1/120 in frame.", 
         "Inject info", MB_OK);
